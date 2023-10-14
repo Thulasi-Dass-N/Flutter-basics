@@ -25,7 +25,7 @@ class AppButton extends StatelessWidget {
             const EdgeInsets.fromLTRB(10, 10, 10, 10)),
         minimumSize: MaterialStateProperty.all(const Size(200, 40)),
         maximumSize: MaterialStateProperty.all(const Size(264, 46)),
-        fixedSize: MaterialStateProperty.all(const Size(200, 40)),
+        fixedSize: MaterialStateProperty.all(const Size(250, 40)),
         side: MaterialStateProperty.all(
           const BorderSide(
             color: Colors.greenAccent,

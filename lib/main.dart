@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.cyanAccent, foregroundColor: Colors.black),
       ),
       home: LoginScreen(),
-      routes: {'/chat': (context) => const ChatScreen()},
+      routes: {'/chat': (context) => ChatScreen()},
     );
     // return MaterialApp.router(
     //   debugShowCheckedModeBanner: false,

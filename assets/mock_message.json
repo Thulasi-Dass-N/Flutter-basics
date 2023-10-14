@@ -1,0 +1,50 @@
+[
+  {
+    "author": {
+      "username": "Thulasi Dass N"
+    },
+    "createdAt": 12349,
+    "id": "1",
+    "message": "hi"
+  },
+  {
+    "author": {
+      "username": "Thulasi Dass"
+    },
+    "createdAt": 12349,
+    "id": "2",
+    "message": "hello"
+  },
+  {
+    "author": {
+      "username": "Thulasi Dass N"
+    },
+    "createdAt": 12349,
+    "id": "3",
+    "message": "at 5 beach road"
+  },
+  {
+    "author": {
+      "username": "Thulasi Dass "
+    },
+    "createdAt": 12349,
+    "id": "5",
+    "message": "ok sure"
+  },
+  {
+    "author": {
+      "username": "Thulasi Dass N"
+    },
+    "createdAt": 12349,
+    "id": "6",
+    "message": "bye"
+  },
+  {
+    "author": {
+      "username": "Thulasi Dass "
+    },
+    "createdAt": 12349,
+    "id": "7",
+    "message": "bye"
+  }
+]

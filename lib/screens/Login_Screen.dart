@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learning/utils/spaces.dart';
 import 'package:flutter_learning/widgets/app_button.dart';
 import 'package:flutter_learning/widgets/app_input.dart';
+import 'package:social_media_buttons/social_media_buttons.dart';
+import 'package:url_launcher/url_launcher.dart';
 // ignore_for_file: file_names
 
 class LoginScreen extends StatelessWidget {
@@ -101,6 +103,43 @@ class LoginScreen extends StatelessWidget {
                   },
                   label: "Login",
                   buttonIcon: const Icon(Icons.login)),
+              VerticalSpacing(10),
+              GestureDetector(
+                onTap: () async {
+                  if (!await launchUrl(
+                      'https://www.linkedin.com/in/thulasi-dass-n-917a93100/'
+                          as Uri)) {
+                    throw Exception('Could not launch url');
+                  }
+                },
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text('Visit us on'),
+                    Text(
+                      'https://www.linkedin.com/in/thulasi-dass-n-917a93100/',
+                      textAlign: TextAlign.center,
+                    )
+                  ],
+                ),
+              ),
+
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SocialMediaButton.google(
+                    url: 'https://www.google.com/',
+                    size: 30,
+                  ),
+                  SocialMediaButton.linkedin(
+                    url:
+                        'https://www.linkedin.com/in/thulasi-dass-n-917a93100/',
+                    size: 30,
+                    color: Colors.blue,
+                  ),
+                ],
+              ),
             ],
           ),
         ),
