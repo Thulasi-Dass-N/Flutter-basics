@@ -21,11 +21,12 @@
     },
     "createdAt": 12349,
     "id": "3",
-    "message": "at 5 beach road"
+    "message": "at 5 beach road",
+    "image": "https://picsum.photos/200"
   },
   {
     "author": {
-      "username": "Thulasi Dass "
+      "username": "Thulasi Dass"
     },
     "createdAt": 12349,
     "id": "5",
@@ -41,7 +42,7 @@
   },
   {
     "author": {
-      "username": "Thulasi Dass "
+      "username": "Thulasi Dass"
     },
     "createdAt": 12349,
     "id": "7",

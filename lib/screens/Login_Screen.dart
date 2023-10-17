@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/services/auth_service.dart';
 import 'package:flutter_learning/utils/spaces.dart';
 import 'package:flutter_learning/widgets/app_button.dart';
 import 'package:flutter_learning/widgets/app_input.dart';
+import 'package:provider/provider.dart';
 import 'package:social_media_buttons/social_media_buttons.dart';
 import 'package:url_launcher/url_launcher.dart';
 // ignore_for_file: file_names
@@ -14,7 +16,7 @@ class LoginScreen extends StatelessWidget {
   final userNameController = TextEditingController();
   final passwordController = TextEditingController();
 
-  loginUser(context) {
+  Future<void> loginUser(BuildContext context) async {
     if (_userForm.currentState != null && _userForm.currentState!.validate()) {
       // Navigator.push(
       //     context,
@@ -25,6 +27,7 @@ class LoginScreen extends StatelessWidget {
       //             )));
       // Navigator.pushNamed(context, '/chat',
       //     arguments: '${userNameController.text}');
+      await context.read<AuthService>().loginUser(userNameController.text);
       Navigator.pushReplacementNamed(context, '/chat',
           arguments: userNameController.text);
     } else {}
@@ -33,6 +36,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -98,8 +102,8 @@ class LoginScreen extends StatelessWidget {
                 height: 20,
               ),
               AppButton(
-                  onPressed: () {
-                    loginUser(context);
+                  onPressed: () async {
+                    await loginUser(context);
                   },
                   label: "Login",
                   buttonIcon: const Icon(Icons.login)),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/models/chat_message_entity.dart';
+import 'package:flutter_learning/services/auth_service.dart';
 import 'package:flutter_learning/widgets/bottomSheet_image.dart';
+import 'package:provider/provider.dart';
 // ignore_for_file: file_names
 
 // ignore_for_file: avoid_print
@@ -19,12 +21,13 @@ class _ChatInputState extends State<ChatInput> {
 
   final chatMessageController = TextEditingController();
 
-  void sendMessage() {
+  Future<void> sendMessage() async {
+    String userNameFromCache = await context.read<AuthService>().getUsername()!;
     final newChatMessage = ChatMessageEntity(
       message: chatMessageController.text,
       id: "132",
       createdAt: DateTime.now().millisecondsSinceEpoch,
-      author: Author(username: "Thulasi Dass"),
+      author: Author(username: userNameFromCache),
     );
     if (_selectedImagedUrl.isNotEmpty) {
       newChatMessage.imageUrl = _selectedImagedUrl;
@@ -57,6 +60,7 @@ class _ChatInputState extends State<ChatInput> {
           IconButton(
             onPressed: () {
               showModalBottomSheet(
+                  backgroundColor: Colors.transparent,
                   context: context,
                   builder: (BuildContext context) {
                     return NetworkImagePicker(onSelectedImage: imagePicked);
